@@ -343,6 +343,7 @@
             <span class="title">Eventos</span>
               <v-data-table
                 v-bind:headers="headers"
+                :rows-per-page-items= [5]
                 :items="this.$store.state.reportes"
                 hide-actions
                 class="elevation-1"

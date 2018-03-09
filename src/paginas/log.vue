@@ -6,7 +6,7 @@
           <h2>LOG de Reportes</h2>
         </v-flex>
         <v-flex text-xs-right>
-          <v-progress-circular indeterminate v-bind:width="10" v-bind:size="20" color="teal darken-1 " v-show="showLoaderLog"></v-progress-circular>
+          <v-progress-circular indeterminate v-bind:width="10" v-bind:size="25" color="teal darken-1 " v-show="showLoaderLog"></v-progress-circular>
           <v-btn @click="actualizar">Actualizar</v-btn>
         </v-flex>
       </v-layout>

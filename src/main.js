@@ -10,6 +10,9 @@ import { VueExtendLayout, layout } from 'vue-extend-layout'
 import 'chart.js'
 import 'hchs-vue-charts'
 
+// import 'pdfmake/build/pdfmake.js'
+// import 'pdfmake/build/vfs_fonts.js'
+
 // import leaflet from 'leaflet'
 
 // ------------------------------------------- RUTAS

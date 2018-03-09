@@ -30,8 +30,9 @@ axios.defaults.headers.common['Authorization'] = localStorage.getItem('token')
 export const actionsMapa = {
   loadReportes ({commit}, payload) {
     commit(ALL_REPORTES)
-    axios.get('/equipos/' + payload.equipoId + '/reportes?filter=%7B%22limit%22%3A%2210%22%7D&').then(response => {
-      console.log(response.data)
+    // console.log(payload)
+    axios.get('/equipos/' + payload.equipoId + '/reportes').then(response => {
+      // console.log(response.data)
       commit(ALL_REPORTES_SUCCESS, response.data)
     })
     // .then(resp => {

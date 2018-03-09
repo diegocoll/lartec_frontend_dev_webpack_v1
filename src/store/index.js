@@ -53,7 +53,7 @@ export default new Vuex.Store({
       Chofer: '',
       Color: '',
       EmpresaId: '',
-      EquipoId: '',
+      // EquipoId: '',
       Equipo: '',
       Estado: '',
       Marca: '',
@@ -67,9 +67,11 @@ export default new Vuex.Store({
     },
     showLoaderReporte: false,
     reportes: [],
+    eventos: [],
     graficaData: {
-      labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-      dataset: [120, 120, 120, 120, 120, 120]
+      datalabel: 'Velocidad',
+      labels: [],
+      dataset: []
     },
     // -------------------- LOGIN
     showLoader: false,

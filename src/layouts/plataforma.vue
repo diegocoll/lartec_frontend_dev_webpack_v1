@@ -74,7 +74,7 @@
           <v-icon>dvr</v-icon>
         </v-list-tile-action>
         <v-list-tile-content>
-          <v-list-tile-title v-text="equipo.equipo_id"></v-list-tile-title>
+          <v-list-tile-title v-text="equipo.id"></v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
     </v-list>
@@ -134,6 +134,15 @@ export default {
     mostrarPanelVehiculo (vehiculo) {
       // console.log(vehiculo)
       this.$store.commit('OPEN_PANEL', vehiculo)
+      this.$store.dispatch('loadReportes',
+        {
+          equipoId: '21128',
+          dateStart: Date.now(),
+          dateEnd: Date.now()
+          // select: this.select,
+          // checkbox: this.checkbox
+        }
+      )
     }
   },
   data () {

@@ -24,11 +24,13 @@ export const ALL_REPORTES_SUCCESS = 'ALL_REPORTES_SUCCESS'
 
 export const mutationsMapa = {
   [OPEN_PANEL] (state, payload) {
+    // console.log(payload.equipoId)
     state.equipos.map(p => {
+      // console.log(p.id)
       if (p.id === payload.equipoId) {
         state.mapaLatitud = p.lat
         state.mapaLongitud = p.lon
-        state.vehiculoPanel.Equipo = p.equipo_id
+        state.vehiculoPanel.Equipo = p.id
       }
     })
     state.mapaZoom = 18
@@ -36,7 +38,7 @@ export const mutationsMapa = {
     state.vehiculoPanel.Chofer = payload.chofer
     state.vehiculoPanel.Color = payload.color
     state.vehiculoPanel.EmpresaId = payload.empresaId
-    state.vehiculoPanel.EquipoId = payload.equipoId
+    // state.vehiculoPanel.EquipoId = payload.id
     state.vehiculoPanel.Estado = payload.estado
     state.vehiculoPanel.Marca = payload.marca
     state.vehiculoPanel.Modelo = payload.modelo
@@ -64,11 +66,17 @@ export const mutationsMapa = {
     // }
     var datasetAux = []
     var labelsAux = []
+    state.eventos = []
     state.reportes.map(p => {
       datasetAux.push(p.vel)
       labelsAux.push(p.fec)
+      if (p.evt !== '11' && p.evt !== '10') {  // ACA HAY QUE DEFINIR TODOS LOS EVENTOS QUE QUEREMOS QUE VEA EL CLIENTE... POR AHORA SOLO FILTRA LOS REPORTES EN CONTACTO Y SIN CONTACTO
+        // console.log(p.evt)
+        state.eventos.push(p)
+      }
     })
     state.graficaData = {
+      datalabel: 'Velocidad',
       dataset: datasetAux,
       labels: labelsAux
     }

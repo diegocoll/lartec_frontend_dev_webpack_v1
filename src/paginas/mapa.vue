@@ -12,13 +12,19 @@
           <v-tilelayer :url="this.$store.state.mapaUrl" :attribution="this.$store.state.mapaAttribution"></v-tilelayer>
           <!-- router
           :to="'/equipo/'+equipo.equipo_id" -->
+          <!-- CUANDO SE CARGA LOS EQUIPOS Y SE ITERA ENTRE TODOS ELLOS, LA CONSOLA TIRA UN ERROR...
+          SE DETECTO QUE EN LA DEFINICION DE :lat-lng ES DONDE SE PRODUCE EL ERROR, PORQUE AL REMPRAZARLO POR VALORES FIJO ANDA BIEN
+          SE ESTIMA QUE EL PROBLE ES QUE AL CARGAR ALGUNOS DE LOS EQUIPOS LAS VARIABLES CORRESPONDIENTES ESTAN MAL SETEADAS... CONTROLAR..
+          -
+          EFECTIVAMENTE SUCEDE LO INDICADO ANTES... SE BORRARON TODOS LOS REPORTES Y SE CARGARON NUEVOS SIN NINGUN ERROR... REALIZAR ALGUNA FUNCION QUE PROTEJA DE ESTOS ERRORES.
+          -->
           <v-marker
             :key="i"
             :icon="icon"
             :lat-lng="[equipo.lat, equipo.lon]"
             v-for="(equipo, i) in $store.state.equipos"
           >
-            <v-popup :content="equipo.equipo_id"></v-popup>
+            <v-popup :content="equipo.id"></v-popup>
           </v-marker>
         </v-map>
       </v-flex>

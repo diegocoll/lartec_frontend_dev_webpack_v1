@@ -136,6 +136,8 @@
                 Cras facilisis mi vitae nunc
               </span> -->
             </div>
+            <br>
+            <br>
           </v-flex>
           <v-flex xs12>
             <v-container grid-list-xl>
@@ -149,7 +151,7 @@
                       <div class="headline red--text text--darken-3">Basico</div>
                     </v-card-title>
                     <v-card-text>
-                      Como servicio ofrecemos poner a disposición
+                      Sistema dedicado a las funciones basicas que los usuarios particulares requieren. Posición actual, historial y alarmas por eventos son algunas de ellas.
                       <br>
                       <br>
                       <router-link to="iot" class="subheading blue-grey--text">Ver Más.</router-link>
@@ -165,7 +167,7 @@
                       <div class="headline red--text text--darken-3">RentalCar</div>
                     </v-card-title>
                     <v-card-text>
-                      Version destinada a las empresas o particulares que rentan vehiculos. Permite visualizar la flota de vehiculos en tiempo real y generar informes con datos y graficas relevantes al uso de cada unidad.
+                      Versión destinada a las empresas o particulares que rentan vehiculos. Permite visualizar la flota en tiempo real y generar informes con datos y graficas relevantes al uso de cada unidad proporcionando de esta manera control y extendiendo la vida útil de los mismo.
                       <br>
                       <br>
                       <router-link to="iot" class="subheading blue-grey--text">Ver Más.</router-link>
@@ -181,10 +183,11 @@
                       <div class="headline red--text text--darken-3">Remis</div>
                     </v-card-title>
                     <v-card-text>
-                      Esta pensado para tener control de la flota de <b>Remises</b> desde la base. Admite la resepcion de pedidos desde una plataforma WEB
+                      Esta pensado para mejorar las capacidades logísticas de la base y si tener mayor control y eficiencia del servicio. Además admite la resepcion de pedidos de moviles desde una aplicación movil y WEB.
                       <br>
                       <br>
-                      <router-link to="iot" class="subheading blue-grey--text">Ver Más.</router-link>
+                      <div class="subheading grey--text check">(Próximamente)</div>
+                      <!-- <router-link to="iot" class="subheading blue-grey--text">Ver Más.</router-link> -->
                     </v-card-text>
                   </v-card>
                 </v-flex>
@@ -197,10 +200,11 @@
                       <div class="headline red--text text--darken-3">Transporte</div>
                     </v-card-title>
                     <v-card-text>
-                      Los dispositivos y sistemas de rastreo en la act
+                      Es de vital importancia controlar toda la flota de vehiculos de transporte. Una correcta gestion de los mismos implican una reduccion de gastos innecesarios ademas de proteger los activos de la empresa.
                       <br>
                       <br>
-                      <router-link to="iot" class="subheading blue-grey--text">Ver Más.</router-link>
+                      <div class="subheading grey--text check">(Próximamente)</div>
+                      <!-- <router-link to="iot" class="subheading blue-grey--text">Ver Más.</router-link> -->
                     </v-card-text>
                   </v-card>
                 </v-flex>
@@ -216,15 +220,15 @@
         <v-parallax src="https://connecteddeviceslab.org/wp-content/uploads/2016/08/MLseries-1.png" height="400">
           <v-layout column align-center justify-center>
             <div class="display-3 white--text mb-3 text-xs-center red--text text--darken-3" style="font-weight: bold; font-family: 'Arial', Times, serif;">Conectividad IOT</div>
-            <div class="headline" style="font-weight: bold; font-family: 'Arial', Times, serif;">Sistemas de rastreo a medida</div>
-            <v-btn
+            <div class="headline" style="font-weight: bold; font-family: 'Arial', Times, serif;">Control de extremo a extremo</div>
+            <!-- <v-btn
               class="red lighten-1 mt-5"
               dark
               large
               href="/pre-made-themes"
             >
               Comenzar
-            </v-btn>
+            </v-btn> -->
           </v-layout>
         </v-parallax>
       </section>
@@ -238,7 +242,7 @@
         >
           <v-flex xs12 sm4 class="my-3">
             <div class="text-xs-center">
-              <h2 class="display-2">Servicios de Rastreo</h2>
+              <h2 class="display-2">Aplicaciones</h2>
               <!-- <span class="headline">
                 Cras facilisis mi vitae nunc
               </span> -->
@@ -253,10 +257,10 @@
                       <v-icon x-large class="grey--text text--lighten-1">wb_incandescent</v-icon>
                     </v-card-text>
                     <v-card-title primary-title class="layout justify-center">
-                      <div class="headline red--text text--darken-3">Planeamiento</div>
+                      <div class="headline red--text text--darken-3">Trazabilidad</div>
                     </v-card-title>
                     <v-card-text>
-                      Todo proyecto comienza con el <b>planeamiento</b>. Es en este punto donde nuestros especialistas analizan y estudian las necesidades a cubrir o problemas que se desean resolver. Primero el cliente presenta, de manera general, las especificaciones del proyecto y luego se genera una comunicacion bidireccional con el equipo de profesionales hasta definir las especificaciones finales.
+                      asdasdasd asdasda sd asdasdasda asd asd asd asd asd asd asdasassdasas as asd asd as dasdasda
                     </v-card-text>
                   </v-card>
                 </v-flex>
@@ -266,11 +270,10 @@
                       <v-icon x-large class="grey--text text--lighten-1">developer_board</v-icon>
                     </v-card-text>
                     <v-card-title primary-title class="layout justify-center">
-                      <div class="headline red--text text--darken-3">Diseño</div>
+                      <div class="headline red--text text--darken-3">Gestion</div>
                     </v-card-title>
                     <v-card-text>
-                      Los dispositivos y sistemas de rastreo en la actualidad son de vital importancia para lograr competitividad en los nuevos mercados debido a los grandes beneficios que trae aparejado la incorporacion de esta tecnología.
-                      LARTEC desarrolla y despliega esta tecnología utilizando metodos y procesos de actualidad. De manera tal que disponemos de nuestros <b>propios</b> rastreadores y sistemas de gestión. Es por este motivo que nos diferenciamos en la industria.
+                      asdasdasd asdasda sd asdasdasda asd asd asd asd asd asd asdasassdasas as asd asd as dasdasda
                     </v-card-text>
                   </v-card>
                 </v-flex>
@@ -280,10 +283,10 @@
                       <v-icon x-large class="grey--text text--lighten-1">business</v-icon>
                     </v-card-text>
                     <v-card-title primary-title class="layout justify-center">
-                      <div class="headline red--text text--darken-3">Despliegue</div>
+                      <div class="headline red--text text--darken-3">Control</div>
                     </v-card-title>
                     <v-card-text>
-                      Los dispositivos y sistemas de rastreo en la act
+                      asdasdasd asdasda sd asdasdasda asd asd asd asd asd asd asdasassdasas as asd asd as dasdasda
                     </v-card-text>
                   </v-card>
                 </v-flex>
@@ -293,10 +296,10 @@
                       <v-icon x-large class="grey--text text--lighten-1">cached</v-icon>
                     </v-card-text>
                     <v-card-title primary-title class="layout justify-center">
-                      <div class="headline red--text text--darken-3">Gestion</div>
+                      <div class="headline red--text text--darken-3">Otros</div>
                     </v-card-title>
                     <v-card-text>
-                      Como servicio ofrecemos poner a disposición
+                      asdasdasd asdasda sd asdasdasda asd asd asd asd asd asd asdasassdasas as asd asd as dasdasda
                     </v-card-text>
                   </v-card>
                 </v-flex>
@@ -428,7 +431,7 @@
                       <img src="../assets/essa_x.png" alt="ESSA 2" height="250">
                       <v-card-title primary-title class="layout justify-center">
                         <div class="headline">ESSA 2</div>
-                        <div class="subheading grey--text check">Próximamente</div>
+                        <div class="subheading grey--text check">(Próximamente)</div>
                       </v-card-title>
                       <v-card-text>
                         Esta version <b>(ESSA 2)</b> pretende cubrir segmentos que requieren dispositivos mas avanzados, nesesarios para sistemas de seguridad y control mas complejos. Por este motivo incorpora una serie de conectores adicionales.
@@ -524,7 +527,7 @@
                       <img src="../assets/essa_x.png" alt="ESSA 3" height="250">
                       <v-card-title primary-title class="layout justify-center">
                         <div class="headline text-xs-center">ESSA 3</div>
-                        <div class="subheading grey--text check">Próximamente</div>
+                        <div class="subheading grey--text check">(Próximamente)</div>
                       </v-card-title>
                       <v-card-text>
                         El más avanzado de la serie <b>ESSA</b> propone una solucion a los requerimientos definidos por las necesidades de la proxima decada. Donde se solicitan sistemas con mayor conectividad e inteligencia.
@@ -679,8 +682,7 @@
                       <div class="headline red--text text--darken-3">Diseño</div>
                     </v-card-title>
                     <v-card-text>
-                      Los dispositivos y sistemas de rastreo en la actualidad son de vital importancia para lograr competitividad en los nuevos mercados debido a los grandes beneficios que trae aparejado la incorporacion de esta tecnología.
-                      LARTEC desarrolla y despliega esta tecnología utilizando metodos y procesos de actualidad. De manera tal que disponemos de nuestros <b>propios</b> rastreadores y sistemas de gestión. Es por este motivo que nos diferenciamos en la industria.
+                      asdasdasdasd asdasdasdasd
                     </v-card-text>
                   </v-card>
                 </v-flex>
@@ -693,7 +695,7 @@
                       <div class="headline red--text text--darken-3">Despliegue</div>
                     </v-card-title>
                     <v-card-text>
-                      Los dispositivos y sistemas de rastreo en la act
+                      Para facilitar a nuestros cliente los engorro
                     </v-card-text>
                   </v-card>
                 </v-flex>

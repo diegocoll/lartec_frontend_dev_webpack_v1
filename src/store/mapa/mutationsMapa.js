@@ -2,8 +2,8 @@
 
 // ------------------------------------------- NOMBRE DE MUTACIONES
 
-export const OPEN_PANEL = 'OPEN_PANEL'
-export const CLOSE_PANEL = 'CLOSE_PANEL'
+export const VEHICULO_ACTUAL = 'VEHICULO_ACTUAL'
+export const ORIGEN_MAPA = 'ORIGEN_MAPA'
 
 export const ALL_REPORTES = 'ALL_REPORTES'
 export const ALL_REPORTES_SUCCESS = 'ALL_REPORTES_SUCCESS'
@@ -23,33 +23,38 @@ export const ALL_REPORTES_SUCCESS = 'ALL_REPORTES_SUCCESS'
 // ------------------------------------------- MUTACIONES
 
 export const mutationsMapa = {
-  [OPEN_PANEL] (state, payload) {
-    // console.log(payload.equipoId)
+  [VEHICULO_ACTUAL] (state, payload) {
+    // LA FUNCION DE ABAJO SE USA PARA RASTREAR EL VEHICULO SELECCIONADO EN
+    // EL ARRAY DE EQUIPOS CARGADOS PARA EXTRAER LA LAT Y LOG PARA POSICIONAR EL MAPA
+
     state.equipos.map(p => {
       // console.log(p.id)
       if (p.id === payload.equipoId) {
         state.mapaLatitud = p.lat
         state.mapaLongitud = p.lon
-        state.vehiculoPanel.Equipo = p.id
+        // state.VehiculoActual.Equipo = p.id
       }
     })
+    // ALTURA DEL MAPA CUANDOS SE SELECCIONA UN VEHICULO
     state.mapaZoom = 18
-    state.vehiculoPanel.Chasis = payload.chasis
-    state.vehiculoPanel.Chofer = payload.chofer
-    state.vehiculoPanel.Color = payload.color
-    state.vehiculoPanel.EmpresaId = payload.empresaId
-    // state.vehiculoPanel.EquipoId = payload.id
-    state.vehiculoPanel.Estado = payload.estado
-    state.vehiculoPanel.Marca = payload.marca
-    state.vehiculoPanel.Modelo = payload.modelo
-    state.vehiculoPanel.Motor = payload.motor
-    state.vehiculoPanel.Nombre = payload.nombre
-    state.vehiculoPanel.Patente = payload.patente
-    state.vehiculoPanel.Tipo = payload.tipo
-    state.vehiculoPanel.Titular = payload.titular
-    state.vehiculoPanel.Voltaje = payload.voltaje
+    // DATOS DEL VEHICULO ACTUAL A MOSTRAR EN LA PAGINA Y BARRA LATERAL DERECHA
+
+    state.VehiculoActual.Chasis = payload.chasis
+    state.VehiculoActual.Chofer = payload.chofer
+    state.VehiculoActual.Color = payload.color
+    state.VehiculoActual.EmpresaId = payload.empresaId
+    state.VehiculoActual.EquipoId = payload.equipoId
+    state.VehiculoActual.Estado = payload.estado
+    state.VehiculoActual.Marca = payload.marca
+    state.VehiculoActual.Modelo = payload.modelo
+    state.VehiculoActual.Motor = payload.motor
+    state.VehiculoActual.Nombre = payload.nombre
+    state.VehiculoActual.Patente = payload.patente
+    state.VehiculoActual.Tipo = payload.tipo
+    state.VehiculoActual.Titular = payload.titular
+    state.VehiculoActual.Voltaje = payload.voltaje
   },
-  [CLOSE_PANEL] (state) {
+  [ORIGEN_MAPA] (state) {
     state.mapaLatitud = -29.419531
     state.mapaLongitud = -66.855920
     state.mapaZoom = 13

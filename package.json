@@ -26,7 +26,7 @@
     "vue-extend-layout": "^1.0.1",
     "vue-router": "^3.0.1",
     "vue2-leaflet": "0.0.58",
-    "vuetify": "^0.17.6",
+    "vuetify": "^0.17.7",
     "vuex": "^3.0.1"
   },
   "devDependencies": {

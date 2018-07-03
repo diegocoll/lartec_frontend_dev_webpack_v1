@@ -12,6 +12,7 @@
           <v-tilelayer :url="this.$store.state.mapaUrl" :attribution="this.$store.state.mapaAttribution"></v-tilelayer>
           <!-- router
           :to="'/equipo/'+equipo.equipo_id" -->
+
           <!-- CUANDO SE CARGA LOS EQUIPOS Y SE ITERA ENTRE TODOS ELLOS, LA CONSOLA TIRA UN ERROR...
           SE DETECTO QUE EN LA DEFINICION DE :lat-lng ES DONDE SE PRODUCE EL ERROR, PORQUE AL REMPRAZARLO POR VALORES FIJO ANDA BIEN
           SE ESTIMA QUE EL PROBLE ES QUE AL CARGAR ALGUNOS DE LOS EQUIPOS LAS VARIABLES CORRESPONDIENTES ESTAN MAL SETEADAS... CONTROLAR..
@@ -24,7 +25,15 @@
             :lat-lng="[equipo.lat, equipo.lon]"
             v-for="(equipo, i) in $store.state.equipos"
           >
-            <v-popup :content="equipo.id"></v-popup>
+            <!-- <v-popup :content="equipo.id"> -->
+            <v-popup>
+              <h3>{{equipo.id}}</h3>
+              <!-- VER COMO HACER EL SALTO A LA PAGINA DE MOSTRAR VEHICULO, PORQUE ACA NO TENGO LA PATENTE COMO DATO...
+              SALVO QUE LE AGFREGE EL DATO AL CAMPO DE LOS EUIPOS... VER... -->
+              <v-btn  @click.stop="" :to="'/vehiculo/'+equipo.id">
+                <span class="grey--text">mostrar</span>
+              </v-btn>
+            </v-popup>
           </v-marker>
         </v-map>
       </v-flex>
@@ -42,7 +51,6 @@ import Vue2Leaflet from 'vue2-leaflet'
 
 import iconUrl from 'leaflet/dist/images/marker-icon.png'
 import shadowUrl from 'leaflet/dist/images/marker-shadow.png'
-// import GraficaLineal from '../components/grafica_lineal'
 
 // ------------------------------------ CSS
 
@@ -55,16 +63,14 @@ export default {
     'v-popup': Vue2Leaflet.Popup,
     'v-icondefault': Vue2Leaflet.IconDefault,
     'v-marker': Vue2Leaflet.Marker
-
   },
   data () {
     let icon = window.L.icon(Object.assign({},
-      window.L.Icon.Default.prototype.options,
-      {iconUrl, shadowUrl}
-    ))
+        window.L.Icon.Default.prototype.options,
+        {iconUrl, shadowUrl}
+      ))
     return {
-      icon,
-      title: 'LARTEC'
+      icon  // SE USA PARA CARGAR LAS IMAGENES DE LOS ICONOS... ANDA MAS O MENOS... VER..!!
     }
   }
 }

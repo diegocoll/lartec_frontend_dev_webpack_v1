@@ -6,16 +6,24 @@ import Router from 'vue-router'
 // ------------------------------------------- PAGINAS
 
 import Inicio from '@/paginas/inicio'
+import Bienvenido from '@/paginas/bienvenido'
 import Login from '@/paginas/login'
+import Error from '@/paginas/error'
+
 import Dashboard from '@/paginas/dashboard'
 import Mapa from '@/paginas/mapa'
-import Log from '@/paginas/log'
+import Zonas from '@/paginas/zonas'
+import Notificaciones from '@/paginas/notificaciones'
 import Ajustes from '@/paginas/ajustes'
-import Vehiculo from '@/paginas/vehiculo'
-import Equipo from '@/paginas/equipo'
-import Usuario from '@/paginas/usuario'
 import Feedback from '@/paginas/feedback'
-import error from '@/paginas/error'
+import Log from '@/paginas/log'
+
+import Graficas from '@/paginas/graficas'
+import Vehiculo from '@/paginas/vehiculo'
+import Vehiculos from '@/paginas/vehiculos'
+import Equipo from '@/paginas/equipo'
+import Equipos from '@/paginas/equipos'
+import Usuario from '@/paginas/usuario'
 
 // ------------------------------------------- COMPONENTES
 
@@ -31,6 +39,11 @@ export default new Router({
       path: '/',
       name: 'Inicio',
       component: Inicio
+    },
+    {
+      path: '/Bienvenido',
+      name: 'Bienvenido',
+      component: Bienvenido
     },
     {
       path: '/Login',
@@ -70,6 +83,14 @@ export default new Router({
       }
     },
     {
+      path: '/Vehiculo/:id/Graficas',
+      name: 'Graficas',
+      component: Graficas,
+      meta: {
+        layout: 'plataforma'
+      }
+    },
+    {
       path: '/Vehiculo/:id',
       name: 'Vehiculo',
       component: Vehiculo,
@@ -78,9 +99,33 @@ export default new Router({
       }
     },
     {
+      path: '/Vehiculos',
+      name: 'Vehiculos',
+      component: Vehiculos,
+      meta: {
+        layout: 'plataforma'
+      }
+    },
+    {
       path: '/Equipo/:id',
       name: 'Equipo',
       component: Equipo,
+      meta: {
+        layout: 'plataforma'
+      }
+    },
+    {
+      path: '/Equipos',
+      name: 'Equipos',
+      component: Equipos,
+      meta: {
+        layout: 'plataforma'
+      }
+    },
+    {
+      path: '/Zonas',
+      name: 'Zonas',
+      component: Zonas,
       meta: {
         layout: 'plataforma'
       }
@@ -102,9 +147,17 @@ export default new Router({
       }
     },
     {
+      path: '/Notificaciones',
+      name: 'Notificaciones',
+      component: Notificaciones,
+      meta: {
+        layout: 'plataforma'
+      }
+    },
+    {
       path: '/*',
       name: 'Error',
-      component: error,
+      component: Error,
       meta: {
         layout: 'error'
       }

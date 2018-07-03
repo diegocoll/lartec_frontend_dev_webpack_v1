@@ -48,13 +48,14 @@ export default new Vuex.Store({
     mapaZoom: 13,
     // -------------------- PANEL VEHICULO
     // showPanelVehiculo: false,
-    vehiculoPanel: {
+    // vehiculoPanel: { // VIEJO.... NUEVO.. VehiculoActual
+    VehiculoActual: {
       Chasis: '',
       Chofer: '',
       Color: '',
       EmpresaId: '',
-      // EquipoId: '',
-      Equipo: '',
+      EquipoId: '',
+      // Equipo: '',
       Estado: '',
       Marca: '',
       Modelo: '',

@@ -1,11 +1,11 @@
 <template>
   <v-app>
-    <h1>PAGE NOT FOUND</h1>
+    <!-- <h1>PAGE NOT FOUND</h1> -->
     <!-- <h1>INICIO</h1> -->
     <!-- <div class="container">
       <router-view />
     </div> -->
-    <v-content>
+    <v-content class="grey darken-4">
       <router-view/>
     </v-content>
   </v-app>

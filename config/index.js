@@ -15,10 +15,8 @@ module.exports = {
     // Various Dev Server settings
     // ACA HAY QUE PONER LA IP LOCAL (172.31.3.106) DEL SERVIDOR PARA HACERLO ANDAR CON (sudo pm2 start npm --name "WebApp" -- run start)
     // host: '172.31.3.106',
-    // host: 'localhost', // can be overwritten by process.env.HOST
-    host: '172.31.3.106',
-    // port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
-    port: 80, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    host: 'localhost', // can be overwritten by process.env.HOST
+    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,

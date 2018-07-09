@@ -33,7 +33,7 @@ export const actionsMapa = {
   loadReportes ({commit}, payload) {
     commit(ALL_REPORTES)
     // console.log(payload)
-    axios.get('/equipos/' + payload.equipoId + '/reportes?filter=%7B%22limit%22%20%3A%20100%7D').then(response => {
+    axios.get('/equipos/' + payload.equipoId + '/reportes?filter=%7B%22limit%22%20%3A%20500%7D').then(response => {
       // console.log(response.data)
       commit(ALL_REPORTES_SUCCESS, response.data)
     })

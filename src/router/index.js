@@ -19,6 +19,7 @@ import Feedback from '@/paginas/feedback'
 import Log from '@/paginas/log'
 
 import Graficas from '@/paginas/graficas'
+import Informe from '@/paginas/informe'
 import Vehiculo from '@/paginas/vehiculo'
 import Vehiculos from '@/paginas/vehiculos'
 import Equipo from '@/paginas/equipo'
@@ -86,6 +87,14 @@ export default new Router({
       path: '/Vehiculo/:id/Graficas',
       name: 'Graficas',
       component: Graficas,
+      meta: {
+        layout: 'plataforma'
+      }
+    },
+    {
+      path: '/Vehiculo/:id/Informe',
+      name: 'Informe',
+      component: Informe,
       meta: {
         layout: 'plataforma'
       }

@@ -12,7 +12,9 @@
       disable-route-watcher
       fixed
       app
+      id="MenuIzquierdo"
     >
+      <!-- BARRA SUPERIOR DEL MENU IZQUIERDO _______________________________ -->
       <v-toolbar>
         <v-list>
           <v-list-tile avatar>
@@ -26,6 +28,8 @@
           </v-list-tile>
         </v-list>
       </v-toolbar>
+
+      <!-- MENU PRINCIPAL DE USUARIO _______________________________________ -->
 
       <v-list>
         <v-subheader>General</v-subheader>
@@ -45,6 +49,32 @@
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
+
+      <!-- MENU DE ADMINISTRADOR ___________________________________________ -->
+
+      <!-- HACER QUE TODA LA SECCION DE ABAJO APARESCA CUANDO EL USUARIO ES ADMINISTRADOR. -->
+      <v-divider></v-divider>
+      <v-list>
+        <v-subheader>Administrador</v-subheader>
+        <v-list-tile
+          router
+          :to="menu.to"
+          :key="i"
+          @click.stop="rightDrawer = false"
+          v-for="(menu, i) in menusAdmin"
+          exact
+        >
+          <v-list-tile-action>
+            <v-icon v-html="menu.icon"></v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title v-text="menu.title"></v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+
+      <!-- LISTA DE VEHICULOS DEL USUARIO __________________________________ -->
+
       <v-divider></v-divider>
       <v-list>
         <v-subheader>Vehiculos</v-subheader>
@@ -95,6 +125,7 @@
     <v-toolbar
       app
       :clipped-left="clipped"
+      id="BarraSuperior"
     >
     <!-- dense // Es para hacer fina la barra superior, va dentro de la etiqueta superior-->
 
@@ -134,6 +165,7 @@
       disable-route-watcher
       fixed
       app
+      id="MenuDerecho"
     >
       <!-- BARRA SUPERIOR DEL MENU _________________________________________ -->
 
@@ -160,10 +192,10 @@
           <v-icon class="grey--text">directions_car</v-icon>
         </v-btn>
         <v-btn icon @click.stop="e2 = 1">
-          <v-icon class="grey--text">library_books</v-icon>
+          <v-icon class="grey--text">event</v-icon>
         </v-btn>
-        <v-btn icon  @click.stop="">
-          <v-icon class="grey--text">print</v-icon>
+        <v-btn icon  @click.stop="" :to="'/vehiculo/'+VehiculoActual.Patente+'/informe'">
+          <v-icon class="grey--text">library_books</v-icon>
         </v-btn>
         <v-btn icon @click.stop="rightDrawer = false, mostrarMapa()">
           <v-icon class="grey--text">close</v-icon>
@@ -292,7 +324,7 @@
         <v-stepper vertical non-linear class="elevation-0">
           <template v-for="(evento, i) in $store.state.eventos">
             <v-stepper-step color="green" :step="i+1" editable>
-              <h3 v-text="evento.evt"></h3>
+              <h3>{{evento.nombre}} <span class="grey--text text--lighten-1">({{evento.evt}})</span></h3> 
               <small>{{evento.hor}} hs - {{evento.fec}}</small>
             </v-stepper-step>
             <v-stepper-content :step="i+1">
@@ -303,48 +335,6 @@
               <p>{{evento.gps}} GPS - {{evento.csq}} GSM</p>
             </v-stepper-content>
           </template>
-          <!-- <v-stepper-step step="2" editable>
-            Supero limite de Velocidad
-            <small>15:05 hs - 17/06/18</small>
-          </v-stepper-step>
-          <v-stepper-content step="2">
-
-          </v-stepper-content>
-          <v-stepper-step step="3" editable>
-            Supero limite de Velocidad
-            <small>13:16 hs - 17/06/18</small>
-          </v-stepper-step>
-          <v-stepper-content step="3">
-
-          </v-stepper-content>
-          <v-stepper-step step="4" editable>
-            Apertura de capo
-            <small>12:19 hs - 17/06/18</small>
-          </v-stepper-step>
-          <v-stepper-content step="4">
-
-          </v-stepper-content>
-          <v-stepper-step step="5" editable>
-            Extracción de auxilió
-            <small>10:55 hs - 17/06/18</small>
-          </v-stepper-step>
-          <v-stepper-content step="5">
-
-          </v-stepper-content>
-          <v-stepper-step step="6" editable>
-            Supero limite de Velocidad
-            <small>09:28 hs - 17/06/18</small>
-          </v-stepper-step>
-          <v-stepper-content step="6">
-
-          </v-stepper-content>
-          <v-stepper-step step="7" editable>
-            Frenada brusca
-            <small>08:53 hs - 17/06/18</small>
-          </v-stepper-step>
-          <v-stepper-content step="7">
-
-          </v-stepper-content> -->
         </v-stepper>
       </div>
     </v-navigation-drawer>
@@ -404,7 +394,9 @@ export default {
         { title: 'Zonas', icon: 'view_quilt', to: '/zonas' },
         { title: 'Notificaciones', icon: 'notifications', to: '/notificaciones' },
         { title: 'Ajustes', icon: 'settings', to: '/ajustes' },
-        { title: 'Feedback', icon: 'question_answer', to: '/feedback' },
+        { title: 'Feedback', icon: 'question_answer', to: '/feedback' }
+      ],
+      menusAdmin: [
         { title: 'Vehículos', icon: 'directions_car', to: '/vehiculos' },
         { title: 'Equipos', icon: 'developer_board', to: '/equipos' },
         { title: 'LOG', icon: 'code', to: '/log' }
@@ -427,8 +419,24 @@ export default {
   export default {
     name: 'default' // id of the layout (required)
   }
-</script>
+</script> -->
 
 <style>
+@informe {
+  size: A4;
+  margin: 0;
+}
+@media print {
+  #MenuDerecho, #MenuIzquierdo, #BarraSuperior{
+   visibility: hidden;
+ }
+ #informe, #informe * {
+   visibility: visible;
+ }
+ #informe {
+   position: absolute;
+   left: 0;
+   top: 0;
+ }
+}
 </style>
--->

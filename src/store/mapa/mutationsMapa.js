@@ -74,7 +74,7 @@ export const mutationsMapa = {
     state.eventos = []
     state.reportes.map(p => {
       datasetAux.push(p.vel)
-      labelsAux.push(p.fec)
+      labelsAux.push(p.hor)
       if (p.evt !== '11' && p.evt !== '10') {  // ACA HAY QUE DEFINIR TODOS LOS EVENTOS QUE QUEREMOS QUE VEA EL CLIENTE... POR AHORA SOLO FILTRA LOS REPORTES EN CONTACTO Y SIN CONTACTO
         var vari = p.evt
         console.log(vari)

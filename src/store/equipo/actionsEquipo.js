@@ -21,7 +21,6 @@ import axios from 'axios'
 // ------------------------------------------- CONSTANTES
 
 // const API_BASE = 'http://localhost:3030/api'  // VER...!!! CAMBIAR POR UNA VARIABLE GLOBAL DE ENTORNO DE PRODUCCION
-
 axios.defaults.baseURL = 'http://54.233.162.8:3030/api' // Para el server remoto
 // axios.defaults.baseURL = 'http://localhost:3030/api' // Para el server local
 

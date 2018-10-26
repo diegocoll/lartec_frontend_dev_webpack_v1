@@ -19,6 +19,7 @@ export const mutationsLogin = {
   // },
   [LOGIN] (state) {
     state.showLoader = true
+    state.user.isLoggedIn = false
     state.statusLogin = ''
   },
   [LOGIN_SUCCESS] (state, payload) {
@@ -26,6 +27,7 @@ export const mutationsLogin = {
     state.user.email = payload.email
     state.user.accessToken = payload.accessToken
     localStorage.setItem('token', payload.accessToken)   // HAY QUE GUARDAR LOS DATOS EN SESSIONES
+    // localStorage.setItem('email', payload.email)         // HAY QUE GUARDAR LOS DATOS EN SESSIONES
     state.user.isLoggedIn = true
     state.showLoader = false
     state.statusLogin = ''
@@ -34,6 +36,8 @@ export const mutationsLogin = {
     state.user.isLoggedIn = false
   },
   [LOGOUT] (state) {
+    localStorage.removeItem('token')   // HAY QUE GUARDAR LOS DATOS EN SESSIONES
+    // localStorage.removeItem('email')   // HAY QUE GUARDAR LOS DATOS EN SESSIONES
     state.user.isLoggedIn = false
   },
   [STATUSLOGIN] (state, payload) {

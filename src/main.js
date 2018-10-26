@@ -15,15 +15,31 @@ import 'hchs-vue-charts'
 
 // import leaflet from 'leaflet'
 
+// ------------------------------------------- CCS
+
+import 'vuetify/dist/vuetify.min.css'
+
 // ------------------------------------------- RUTAS
 
 // import App from './App'
 import router from './router'
 import store from './store'
 
-// ------------------------------------------- CCS
+// ------------------------------------------- Auth
 
-import 'vuetify/dist/vuetify.min.css'
+// var Auth = {
+//   loggedIn: false,
+//   login: function () { this.loggedIn = true },
+//   logout: function () { this.loggedIn = false }
+// }
+//
+// router.beforeEach((to, from, next) => {
+//   if (to.matched.some(record => record.meta.requiresAuth) && !Auth.loggedIn) {
+//     next({path: '/login', query: { redirect: to.fullPath }})
+//   } else {
+//     next()
+//   }
+// })
 
 // ------------------------------------------- USE
 

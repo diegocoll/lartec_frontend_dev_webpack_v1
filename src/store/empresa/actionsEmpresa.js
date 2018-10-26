@@ -17,7 +17,10 @@ import qs from 'qs'
 
 // ------------------------------------------- CONSTANTES
 
-const API_BASE = 'http://localhost:3030'  // VER...!!! CAMBIAR POR UNA VARIABLE GLOBAL DE ENTORNO DE PRODUCCION
+const API_BASE = 'http://54.233.162.8:3030'  // VER...!!! CAMBIAR POR UNA VARIABLE GLOBAL DE ENTORNO DE PRODUCCION
+
+// axios.defaults.baseURL = 'http://54.233.162.8:3030/api' // Para el server remoto
+// axios.defaults.baseURL = 'http://localhost:3030/api' // Para el server local
 
 // ------------------------------------------- CODIGO
 

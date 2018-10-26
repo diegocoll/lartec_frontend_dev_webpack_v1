@@ -234,13 +234,13 @@
           <v-subheader>Aseguradora</v-subheader>
 
           <v-list-tile>
-            <v-list-tile-title>Empresa: <span class="grey--text">{{VehiculoActual.Nombre}}</span></v-list-tile-title>
+            <v-list-tile-title>Empresa: <span class="grey--text">{{VehiculoActual.emp_seguro}}</span></v-list-tile-title>
           </v-list-tile>
           <v-list-tile>
-            <v-list-tile-title>Numero: <span class="grey--text">{{VehiculoActual.Patente}}</span></v-list-tile-title>
+            <v-list-tile-title>Numero: <span class="grey--text">{{VehiculoActual.num_poliza}}</span></v-list-tile-title>
           </v-list-tile>
           <v-list-tile>
-            <v-list-tile-title>Tipo: <span class="grey--text">{{VehiculoActual.Modelo}}</span></v-list-tile-title>
+            <v-list-tile-title>Tipo: <span class="grey--text">{{VehiculoActual.tip_seguro}}</span></v-list-tile-title>
           </v-list-tile>
 
         </v-list>
@@ -249,6 +249,7 @@
           <v-subheader>Periodo</v-subheader>
           <v-list-tile>
             <span class="grey--text caption">(Por defecto se muestran los datos de las ultimas 24hs.)</span>
+            <br>
           </v-list-tile>
           <v-list-tile>
             <v-menu
@@ -324,7 +325,7 @@
         <v-stepper vertical non-linear class="elevation-0">
           <template v-for="(evento, i) in $store.state.eventos">
             <v-stepper-step color="green" :step="i+1" editable>
-              <h3>{{evento.nombre}} <span class="grey--text text--lighten-1">({{evento.evt}})</span></h3> 
+              <h3>{{evento.nombre}} <span class="grey--text text--lighten-1">({{evento.evt}})</span></h3>
               <small>{{evento.hor}} hs - {{evento.fec}}</small>
             </v-stepper-step>
             <v-stepper-content :step="i+1">
@@ -388,6 +389,8 @@ export default {
       clipped: false,
       drawer: true,
       fixed: false,
+      dateStart: null,
+      dateEnd: null,
       menus: [
         { title: 'Principal', icon: 'dashboard', to: '/dashboard' },
         { title: 'Mapa', icon: 'bubble_chart', to: '/mapa' },

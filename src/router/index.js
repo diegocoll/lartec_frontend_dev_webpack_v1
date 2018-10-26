@@ -3,9 +3,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+// ------------------------------------------- IMPORTACION DE VUEX
+
+import store from '../store' // your vuex store
+
 // ------------------------------------------- PAGINAS
 
-import Inicio from '@/paginas/inicio'
+// import Inicio from '@/paginas/inicio'
 import Bienvenido from '@/paginas/bienvenido'
 import Login from '@/paginas/login'
 import Error from '@/paginas/error'
@@ -30,17 +34,35 @@ import Usuario from '@/paginas/usuario'
 
 // import HelloWorld from '@/components/HelloWorld'
 
+// ------------------------------------------- FUNCIONES PARA AUTH
+
+const ifNotAuthenticated = (to, from, next) => {
+  if (!store.state.user.isLoggedIn) {
+    next()
+    return
+  }
+  next('/')
+}
+
+const ifAuthenticated = (to, from, next) => {
+  if (store.state.user.isLoggedIn) {
+    next()
+    return
+  }
+  next('/login')
+}
+
 // ------------------------------------------- RUTAS
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/',
-      name: 'Inicio',
-      component: Inicio
-    },
+    // {
+    //   path: '/',
+    //   name: 'Inicio',
+    //   component: Inicio
+    // },
     {
       path: '/Bienvenido',
       name: 'Bienvenido',
@@ -49,12 +71,14 @@ export default new Router({
     {
       path: '/Login',
       name: 'Login',
-      component: Login
+      component: Login,
+      beforeEnter: ifNotAuthenticated
     },
     {
       path: '/Dashboard',
       name: 'Dashboard',
       component: Dashboard,
+      beforeEnter: ifAuthenticated,
       meta: {
         layout: 'plataforma'
       }
@@ -63,6 +87,7 @@ export default new Router({
       path: '/Mapa',
       name: 'Mapa',
       component: Mapa,
+      beforeEnter: ifAuthenticated,
       meta: {
         layout: 'plataforma'
       }
@@ -71,6 +96,7 @@ export default new Router({
       path: '/Log',
       name: 'Log',
       component: Log,
+      beforeEnter: ifAuthenticated,
       meta: {
         layout: 'plataforma'
       }
@@ -79,6 +105,7 @@ export default new Router({
       path: '/Ajustes',
       name: 'Ajustes',
       component: Ajustes,
+      beforeEnter: ifAuthenticated,
       meta: {
         layout: 'plataforma'
       }
@@ -87,6 +114,7 @@ export default new Router({
       path: '/Vehiculo/:id/Graficas',
       name: 'Graficas',
       component: Graficas,
+      beforeEnter: ifAuthenticated,
       meta: {
         layout: 'plataforma'
       }
@@ -95,6 +123,7 @@ export default new Router({
       path: '/Vehiculo/:id/Informe',
       name: 'Informe',
       component: Informe,
+      beforeEnter: ifAuthenticated,
       meta: {
         layout: 'plataforma'
       }
@@ -103,6 +132,7 @@ export default new Router({
       path: '/Vehiculo/:id',
       name: 'Vehiculo',
       component: Vehiculo,
+      beforeEnter: ifAuthenticated,
       meta: {
         layout: 'plataforma'
       }
@@ -111,6 +141,7 @@ export default new Router({
       path: '/Vehiculos',
       name: 'Vehiculos',
       component: Vehiculos,
+      beforeEnter: ifAuthenticated,
       meta: {
         layout: 'plataforma'
       }
@@ -119,6 +150,7 @@ export default new Router({
       path: '/Equipo/:id',
       name: 'Equipo',
       component: Equipo,
+      beforeEnter: ifAuthenticated,
       meta: {
         layout: 'plataforma'
       }
@@ -127,6 +159,7 @@ export default new Router({
       path: '/Equipos',
       name: 'Equipos',
       component: Equipos,
+      beforeEnter: ifAuthenticated,
       meta: {
         layout: 'plataforma'
       }
@@ -135,6 +168,7 @@ export default new Router({
       path: '/Zonas',
       name: 'Zonas',
       component: Zonas,
+      beforeEnter: ifAuthenticated,
       meta: {
         layout: 'plataforma'
       }
@@ -143,6 +177,7 @@ export default new Router({
       path: '/Usuario/:id',
       name: 'Usuario',
       component: Usuario,
+      beforeEnter: ifAuthenticated,
       meta: {
         layout: 'plataforma'
       }
@@ -151,6 +186,7 @@ export default new Router({
       path: '/Feedback',
       name: 'Feedback',
       component: Feedback,
+      beforeEnter: ifAuthenticated,
       meta: {
         layout: 'plataforma'
       }
@@ -159,6 +195,7 @@ export default new Router({
       path: '/Notificaciones',
       name: 'Notificaciones',
       component: Notificaciones,
+      beforeEnter: ifAuthenticated,
       meta: {
         layout: 'plataforma'
       }

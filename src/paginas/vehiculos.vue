@@ -23,7 +23,7 @@
             :rows-per-page-items="[10, 50, 100]"
           >
             <template slot="items" slot-scope="props">
-              <td class="text-xs-center">{{ props.item.nombre }}</td>
+              <!-- <td class="text-xs-center">{{ props.item.nombre }}</td> -->
               <td class="text-xs-center">{{ props.item.patente }}</td>
               <td class="text-xs-center">{{ props.item.modelo }}</td>
               <td class="text-xs-center">{{ props.item.marca }}</td>
@@ -65,9 +65,9 @@
             <v-card-text>
               <v-container grid-list-md>
                 <v-layout wrap>
-                  <v-flex xs12 sm6 md4>
+                  <!-- <v-flex xs12 sm6 md4>
                     <v-text-field v-model="editedVehiculo.nombre" label="Nombre"></v-text-field>
-                  </v-flex>
+                  </v-flex> -->
                   <v-flex xs12 sm6 md4>
                     <v-text-field v-model="editedVehiculo.patente" label="Patente"></v-text-field>
                   </v-flex>
@@ -185,12 +185,12 @@ export default {
       dialog: false,
       search: '',
       headers: [
-        {
-          text: 'Nombre',
-          align: 'left',
-          sortable: true,
-          value: 'nombre'
-        },
+        // {
+        //   text: 'Nombre',
+        //   align: 'left',
+        //   sortable: true,
+        //   value: 'nombre'
+        // },
         {
           text: 'Patente',
           align: 'left',

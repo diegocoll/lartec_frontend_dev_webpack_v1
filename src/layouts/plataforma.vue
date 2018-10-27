@@ -207,9 +207,10 @@
       <div v-if="e2 === 0">
         <v-list>
           <v-subheader>Vehículo</v-subheader>
-          <v-list-tile>
-            <v-list-tile-title>Nombre: <span class="grey--text">{{VehiculoActual.Nombre}}</span></v-list-tile-title>
-          </v-list-tile>
+          <!-- SE ELIMINO "NOMBRE" DEL MODELO -->
+          <!-- <v-list-tile>
+            <v-list-tile-title>Nombre: <span class="">{{VehiculoActual.Nombre}}</span></v-list-tile-title>
+          </v-list-tile> -->
           <v-list-tile>
             <v-list-tile-title>Patente: <span class="grey--text">{{VehiculoActual.Patente}}</span></v-list-tile-title>
           </v-list-tile>

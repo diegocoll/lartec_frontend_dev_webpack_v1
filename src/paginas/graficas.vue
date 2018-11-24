@@ -11,7 +11,7 @@
           :datalabel="this.$store.state.graficaData.datalabel"
           :labels="this.$store.state.graficaData.labels"
           :data="this.$store.state.graficaData.dataset"
-          :height="80"
+          :height="100"
           :fill="true"
           :bind="true"
           :backgroundcolor="'rgba(75,192,192,0.1)'"

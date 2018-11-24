@@ -42,7 +42,7 @@ import Vue2Leaflet from 'vue2-leaflet'
 // ------------------------------------ URL
 
 import iconUrl from 'leaflet/dist/images/marker-icon.png'
-import shadowUrl from 'leaflet/dist/images/marker-shadow.png'
+// import shadowUrl from 'leaflet/dist/images/marker-shadow.png'
 
 // ------------------------------------ CSS
 
@@ -59,7 +59,7 @@ export default {
   data () {
     let icon = window.L.icon(Object.assign({},
         window.L.Icon.Default.prototype.options,
-        {iconUrl, shadowUrl}
+        {iconSize: [20], iconAnchor: [10, 30], iconUrl}
       ))
     return {
       icon  // SE USA PARA CARGAR LAS IMAGENES DE LOS ICONOS... ANDA MAS O MENOS... VER..!!

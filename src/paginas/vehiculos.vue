@@ -75,16 +75,36 @@
                     <v-text-field v-model="editedVehiculo.modelo" label="Modelo"></v-text-field>
                   </v-flex>
                   <v-flex xs12 sm6 md4>
-                    <v-text-field v-model="editedVehiculo.marca" label="Marca"></v-text-field>
+                    <v-select
+                      :items="marca"
+                      label="Marca"
+                      v-model="editedVehiculo.marca"
+                    ></v-select>
+                    <!-- <v-text-field v-model="editedVehiculo.marca" label="Marca"></v-text-field> -->
                   </v-flex>
                   <v-flex xs12 sm6 md4>
-                    <v-text-field v-model="editedVehiculo.tipo" label="Tipo"></v-text-field>
+                    <v-select
+                      :items="tipo"
+                      label="Tipo"
+                      v-model="editedVehiculo.tipo"
+                    ></v-select>
+                    <!-- <v-text-field v-model="editedVehiculo.tipo" label="Tipo"></v-text-field> -->
                   </v-flex>
                   <v-flex xs12 sm6 md4>
-                    <v-text-field v-model="editedVehiculo.color" label="Color"></v-text-field>
+                    <v-select
+                      :items="color"
+                      label="Color"
+                      v-model="editedVehiculo.color"
+                    ></v-select>
+                    <!-- <v-text-field v-model="editedVehiculo.color" label="Color"></v-text-field> -->
                   </v-flex>
                   <v-flex xs12 sm6 md4>
-                    <v-text-field v-model="editedVehiculo.estado" label="Estado"></v-text-field>
+                    <v-select
+                      :items="estado"
+                      label="Estado"
+                      v-model="editedVehiculo.estado"
+                    ></v-select>
+                    <!-- <v-text-field v-model="editedVehiculo.estado" label="Estado"></v-text-field> -->
                   </v-flex>
                   <v-flex xs12 sm6 md4>
                     <v-text-field v-model="editedVehiculo.chofer" label="Chofer"></v-text-field>
@@ -99,7 +119,12 @@
               <v-text-field v-model="editedVehiculo.motor" label="Motor"></v-text-field>
             </v-flex> -->
             <v-flex xs12 sm6 md4>
-              <v-text-field v-model="editedVehiculo.voltaje" label="Voltaje"></v-text-field>
+              <v-select
+                :items="voltaje"
+                label="Voltaje"
+                v-model="editedVehiculo.voltaje"
+              ></v-select>
+              <!-- <v-text-field v-model="editedVehiculo.voltaje" label="Voltaje"></v-text-field> -->
             </v-flex>
             <v-flex xs12 sm6 md4>
               <v-text-field v-model="editedVehiculo.empresaId" label="Empresa"></v-text-field>
@@ -174,7 +199,8 @@ export default {
       if (this.editedIndex > -1) {
         Object.assign(this.$store.state.vehiculos[this.editedIndex], this.editedVehiculo)
       } else {
-        this.$store.state.vehiculos.push(this.editedVehiculo)
+        // this.$store.state.vehiculos.push(this.editedVehiculo)
+        this.$store.dispatch('addVehiculos', this.editedVehiculo) // FALTA PASAR EL OBJETO CON LOS DATOS DEL NUEVO VEHICULO
       }
       this.close()
     }
@@ -290,7 +316,7 @@ export default {
       ],
       editedIndex: -1,
       editedVehiculo: {
-        nombre: '',
+        // nombre: '',
         patente: '',
         modelo: '',
         marca: '',
@@ -306,7 +332,7 @@ export default {
         equipoId: ''
       },
       defaultVehiculo: {
-        nombre: '',
+        // nombre: '',
         patente: '',
         modelo: '',
         marca: '',
@@ -320,7 +346,12 @@ export default {
         voltaje: '',
         empresaId: '',
         equipoId: ''
-      }
+      },
+      marca: ['ford', 'chevrolet', 'renault', 'fiat', 'volkswagen', 'peugeot', 'toyota', 'nissan', 'otro'],
+      tipo: ['auto', 'pickup', 'camion', 'furgon', 'otro'],
+      color: ['blanco', 'gris', 'rojo', 'azul', 'negro', 'verde', 'amarillo', 'otro'],
+      estado: ['habilitado', 'deshabilitado'],
+      voltaje: ['12', '24']
     }
   }
 }

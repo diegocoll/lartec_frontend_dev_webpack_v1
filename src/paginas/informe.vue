@@ -123,7 +123,10 @@ import Vue2Leaflet from 'vue2-leaflet'
 
 // ------------------------------------ URL
 
-import iconUrl from 'leaflet/dist/images/circulo-icon.png'
+// HAY QUE CAMBIAR EL DIRECCIONAMIENTO DE LAS IMAGENES, PORQUE NO VA A FUNCIONAR BIEN ASI. ESTA FORMA ES TEMPORARIA
+import iconUrl from '../../static/images/circulo-icon.png'
+
+// import iconUrl from 'leaflet/dist/images/circulo-icon.png'
 // import shadowUrl from 'leaflet/dist/images/marker-shadow.png'
 
 // ------------------------------------ CSS

@@ -1,7 +1,7 @@
 <template>
   <v-container style="height: 100%" class="grey lighten-4">
     <br>
-    <v-card style="height: 100%" class="informe" id="informe">
+    <div style="height: 100%" class="informe" id="informe">
       <v-container grid-list-md text-xs-center style="height: 100%">
       <v-layout row wrap>
         <v-flex xs12>
@@ -21,7 +21,6 @@
         </v-flex>
         <v-flex xs3 class="grey lighten-5">
           <br>
-          <p>Nombre: <span class="grey--text">{{VehiculoActual.Nombre}}</span></p>
           <p>Patente: <span class="grey--text">{{VehiculoActual.Patente}}</span></p>
           <p>Modelo: <span class="grey--text">{{VehiculoActual.Modelo}}</span></p>
           <p>Marca: <span class="grey--text">{{VehiculoActual.Marca}}</span></p>
@@ -38,7 +37,7 @@
           <p>Numero: <span class="grey--text">{{VehiculoActual.Patente}}</span></p>
           <p>Tipo: <span class="grey--text">{{VehiculoActual.Modelo}}</span></p>
         </v-flex>
-        <v-flex xs12 style="height: 8cm">
+        <v-flex xs12 style="height: 10cm">
           <v-map
             :zoom="this.$store.state.mapaZoom"
             :center="[this.$store.state.mapaLatitud, this.$store.state.mapaLongitud]"
@@ -66,7 +65,7 @@
             </v-marker>
           </v-map>
         </v-flex>
-        <v-flex xs12 style="height: 6cm">
+        <v-flex xs12 style="height: 8cm">
           <!-- VELOCIDAD -->
 
           <v-container  id="grafica">
@@ -78,7 +77,7 @@
             :datalabel="this.$store.state.graficaData.datalabel"
             :labels="this.$store.state.graficaData.labels"
             :data="this.$store.state.graficaData.dataset"
-            :height="80"
+            :height="100"
             :fill="true"
             :bind="true"
             :backgroundcolor="'rgba(75,192,192,0.1)'"
@@ -93,17 +92,18 @@
         <v-flex xs12>
           <v-stepper non-linear class="elevation-0">
             <v-stepper-header>
-              <template v-for="(evento, i) in $store.state.eventos">
+              <!-- <template v-for="(evento, i) in $store.state.eventos">
                 <v-stepper-step color="green" :step="i+1" editable>
                   <h3 v-text="evento.evt"></h3>
                   <small>{{evento.hor}}</small>
                   <small>{{evento.fec}}</small>
                 </v-stepper-step>
                 <v-divider></v-divider>
-              </template>
+              </template> -->
             </v-stepper-header>
           </v-stepper>
         </v-flex>
+
         <!-- <v-flex xs12>
           <br>
           <v-divider></v-divider>
@@ -111,7 +111,7 @@
         </v-flex> -->
       </v-layout>
       </v-container>
-    </v-card>
+    </div>
   </v-container>
 </template>
 
@@ -123,8 +123,8 @@ import Vue2Leaflet from 'vue2-leaflet'
 
 // ------------------------------------ URL
 
-import iconUrl from 'leaflet/dist/images/marker-icon.png'
-import shadowUrl from 'leaflet/dist/images/marker-shadow.png'
+import iconUrl from 'leaflet/dist/images/circulo-icon.png'
+// import shadowUrl from 'leaflet/dist/images/marker-shadow.png'
 
 // ------------------------------------ CSS
 
@@ -147,7 +147,7 @@ export default {
   data () {
     let icon = window.L.icon(Object.assign({},
         window.L.Icon.Default.prototype.options,
-        {iconUrl, shadowUrl}
+        {iconSize: [10, 10], iconUrl, iconAnchor: [5, 5]}
       ))
     return {
       icon  // SE USA PARA CARGAR LAS IMAGENES DE LOS ICONOS... ANDA MAS O MENOS... VER..!!
@@ -166,6 +166,6 @@ export default {
   display: block;
   margin: 0 auto;
   margin-bottom: 0.5cm;
-  z-index: ;
+  /* z-index: 10; */
 }
 </style>

@@ -2,11 +2,11 @@
 
 import {
   ALL_VEHICULOS,
-  ALL_VEHICULOS_SUCCESS
+  ALL_VEHICULOS_SUCCESS,
   // VEHICULO_BY_ID,
   // VEHICULO_BY_ID_SUCCESS,
-  // ADD_VEHICULO,
-  // ADD_VEHICULO_SUCCESS,
+  ADD_VEHICULO,
+  ADD_VEHICULO_SUCCESS
   // UPDATE_VEHICULO,
   // UPDATE_VEHICULO_SUCCESS,
   // REMOVE_VEHICULO,
@@ -21,8 +21,8 @@ import axios from 'axios'
 // ------------------------------------------- CONSTANTES
 
 // const API_BASE = 'http://localhost:3030/api'  // VER...!!! CAMBIAR POR UNA VARIABLE GLOBAL DE ENTORNO DE PRODUCCION
-axios.defaults.baseURL = 'http://54.233.162.8:3030/api' // Para el server remoto
-// axios.defaults.baseURL = 'http://localhost:3030/api' // Para el server local
+// axios.defaults.baseURL = 'http://54.233.162.8:3030/api' // Para el server remoto
+axios.defaults.baseURL = 'http://localhost:3030/api' // Para el server local
 
 axios.defaults.headers.common['Authorization'] = localStorage.getItem('token')
 
@@ -48,6 +48,30 @@ export const actionsVehiculo = {
       //      // commit(VEHICULO_ERROR, err.data) // HAY QUE DEFINIR LA MUTACION
       //    })
       // }
+    })
+    // .then(resp => {
+    //   console.log(resp)
+    // })
+    .catch(err => {
+      console.log(err)
+      // commit(VEHICULO_ERROR, err.data) // HAY QUE DEFINIR LA MUTACION
+    })
+  },
+  addVehiculos ({commit}, payload) {
+    commit(ADD_VEHICULO)
+    // console.log(payload)
+    // let data = JSON.stringify({
+    //   password: this.state.password,
+    //   username: this.state.email
+    // })
+    axios.post('/vehiculos', payload, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    ).then(response => {
+      // console.log(response.data)
+      commit(ADD_VEHICULO_SUCCESS, response.data)
     })
     // .then(resp => {
     //   console.log(resp)

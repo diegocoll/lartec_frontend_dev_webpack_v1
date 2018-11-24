@@ -395,6 +395,8 @@ export default {
       menus: [
         { title: 'Principal', icon: 'dashboard', to: '/dashboard' },
         { title: 'Mapa', icon: 'bubble_chart', to: '/mapa' },
+        { title: 'Checking', icon: 'assignment', to: '/dashboard' },
+        { title: 'Checkout', icon: 'assignment_turned_in', to: '/dashboard' },
         { title: 'Zonas', icon: 'view_quilt', to: '/zonas' },
         { title: 'Notificaciones', icon: 'notifications', to: '/notificaciones' },
         { title: 'Ajustes', icon: 'settings', to: '/ajustes' },

@@ -73,9 +73,33 @@ export const mutationsMapa = {
     var labelsAux = []
     state.eventos = []
     state.reportes.map(p => {
+      // console.log(p)
       datasetAux.push(p.vel)
-      labelsAux.push(p.hor)
-      if (p.evt !== '11' && p.evt !== '10') {  // ACA HAY QUE DEFINIR TODOS LOS EVENTOS QUE QUEREMOS QUE VEA EL CLIENTE... POR AHORA SOLO FILTRA LOS REPORTES EN CONTACTO Y SIN CONTACTO
+
+      // SE CALCULA LA AHORA Y SE LA ARREGLA ACA, PERO SE DEBE REALIZAR DESDE OTRO LUGAR. ANALIZAR POSIBILIDADES.
+
+      var hora = Number(p.hor.substr(0, 2))
+
+      if (hora >= 3) {
+        var num = hora - 3
+        hora = num.toString()
+      }
+      if (hora === 2) {
+        hora = '23'
+      }
+      if (hora === 1) {
+        hora = '22'
+      }
+      if (hora === 0) {
+        hora = '21'
+      }
+
+      var minu = p.hor.substr(2, 2)
+      var segu = p.hor.substr(4, 2)
+
+      labelsAux.push(hora + ':' + minu + ':' + segu)
+
+      if (p.evt !== '11' && p.evt !== '10' && p.evt !== '12' && p.evt !== '13') {  // ACA HAY QUE DEFINIR TODOS LOS EVENTOS QUE QUEREMOS QUE VEA EL CLIENTE... POR AHORA SOLO FILTRA LOS REPORTES EN CONTACTO Y SIN CONTACTO
         var vari = p.evt
         console.log(vari)
         switch (vari) {

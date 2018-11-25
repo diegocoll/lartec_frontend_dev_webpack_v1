@@ -393,7 +393,7 @@ export default {
       dateStart: null,
       dateEnd: null,
       menus: [
-        { title: 'Principal', icon: 'dashboard', to: '/dashboard' },
+        { title: 'Dashboard', icon: 'dashboard', to: '/dashboard' },
         { title: 'Mapa', icon: 'bubble_chart', to: '/mapa' },
         { title: 'Checking', icon: 'assignment', to: '/checking' },
         { title: 'Checkout', icon: 'assignment_turned_in', to: '/checkout' },

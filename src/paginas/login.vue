@@ -139,6 +139,7 @@ export default {
       if (this.$refs.form.validate()) {
         this.$store.dispatch('startlogin',
           {
+            // MOFIFICAR LA DEBOLUCION DE LAS VARIABLES QUE MANDA EL SERVER, PARA NO TENER QUE REALIZAR UNA SEGUNDA CONSULTA.
             // username: this.username,
             email: this.email,
             password: this.password

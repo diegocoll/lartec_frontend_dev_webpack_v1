@@ -16,6 +16,8 @@ import Error from '@/paginas/error'
 
 import Dashboard from '@/paginas/dashboard'
 import Mapa from '@/paginas/mapa'
+import Checking from '@/paginas/checking'
+import Checkout from '@/paginas/checkout'
 import Zonas from '@/paginas/zonas'
 import Notificaciones from '@/paginas/notificaciones'
 import Ajustes from '@/paginas/ajustes'
@@ -66,7 +68,8 @@ export default new Router({
     {
       path: '/Bienvenido',
       name: 'Bienvenido',
-      component: Bienvenido
+      component: Bienvenido,
+      beforeEnter: ifNotAuthenticated
     },
     {
       path: '/Login',
@@ -87,6 +90,24 @@ export default new Router({
       path: '/Mapa',
       name: 'Mapa',
       component: Mapa,
+      beforeEnter: ifAuthenticated,
+      meta: {
+        layout: 'plataforma'
+      }
+    },
+    {
+      path: '/Checking',
+      name: 'Checking',
+      component: Checking,
+      beforeEnter: ifAuthenticated,
+      meta: {
+        layout: 'plataforma'
+      }
+    },
+    {
+      path: '/Checkout',
+      name: 'Checkout',
+      component: Checkout,
       beforeEnter: ifAuthenticated,
       meta: {
         layout: 'plataforma'

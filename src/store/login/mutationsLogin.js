@@ -24,6 +24,8 @@ export const mutationsLogin = {
   },
   [LOGIN_SUCCESS] (state, payload) {
     // state.user.nombre = payload.nombre
+    // MOFIFICAR LA DEBOLUCION DE LAS VARIABLES QUE MANDA EL SERVER, PARA NO TENER QUE REALIZAR UNA SEGUNDA CONSULTA.
+    // console.log(payload)
     state.user.email = payload.email
     state.user.accessToken = payload.accessToken
     localStorage.setItem('token', payload.accessToken)   // HAY QUE GUARDAR LOS DATOS EN SESSIONES

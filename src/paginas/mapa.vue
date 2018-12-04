@@ -21,18 +21,22 @@
           -->
           <v-marker
             :key="i"
-            :icon="icon"
+            :icon="defaultIcon"
             :lat-lng="[equipo.lat, equipo.lon]"
             v-for="(equipo, i) in $store.state.equipos"
           >
             <!-- <v-popup :content="equipo.id"> -->
+
             <v-popup>
               <h3>{{equipo.id}}</h3>
+
               <!-- VER COMO HACER EL SALTO A LA PAGINA DE MOSTRAR VEHICULO, PORQUE ACA NO TENGO LA PATENTE COMO DATO...
               SALVO QUE LE AGFREGE EL DATO AL CAMPO DE LOS EUIPOS... VER... -->
-              <v-btn  @click.stop="" :to="'/vehiculo/'+equipo.id">
+
+              <!-- <v-btn  @click.stop="" :to="'/vehiculo/'+equipo.id">
                 <span class="grey--text">mostrar</span>
-              </v-btn>
+              </v-btn> -->
+
             </v-popup>
           </v-marker>
         </v-map>
@@ -50,13 +54,13 @@ import Vue2Leaflet from 'vue2-leaflet'
 // ------------------------------------ URL
 
 // HAY QUE CAMBIAR EL DIRECCIONAMIENTO DE LAS IMAGENES, PORQUE NO VA A FUNCIONAR BIEN ASI. ESTA FORMA ES TEMPORARIA
-// import iconUrl from '../images/marker-icon.png'
+import iconUrl from '../images/marker-icon.png'
 
-import iconUrl from 'leaflet/dist/images/marker-icon.png'
+// import iconUrl from 'leaflet/dist/images/marker-icon.png'
 // import iconUrl from 'leaflet/dist/images/circulo-icon.png'
 // import iconUrl from 'leaflet/dist/images/marker-icon2.png'
 
-import shadowUrl from '../images/marker-icon.png'
+import shadowUrl from '../images/marker-shadow.png'
 // import shadowUrl from 'leaflet/dist/images/marker-shadow.png'
 
 // ------------------------------------ CSS
@@ -72,12 +76,21 @@ export default {
     'v-marker': Vue2Leaflet.Marker
   },
   data () {
-    let icon = window.L.icon(Object.assign({},
-        window.L.Icon.Default.prototype.options,
-        {iconSize: [20], iconAnchor: [10, 30], shadowAnchor: [12, 38], iconUrl, shadowUrl}
-      ))
+    // let icon = window.L.icon(Object.assign({},
+    //     window.L.Icon.Default.prototype.options,
+    //     {iconSize: [20], iconAnchor: [10, 30], shadowAnchor: [12, 38], iconUrl, shadowUrl}
+    //   ))
     return {
-      icon  // SE USA PARA CARGAR LAS IMAGENES DE LOS ICONOS... ANDA MAS O MENOS... VER..!!
+      // icon  // SE USA PARA CARGAR LAS IMAGENES DE LOS ICONOS... ANDA MAS O MENOS... VER..!!
+      defaultIcon: window.L.icon({
+        iconUrl: iconUrl,
+        shadowUrl: shadowUrl,
+        iconSize: [20],
+        shadowSize: [50, 64],
+        iconAnchor: [22, 94],
+        shadowAnchor: [4, 62],
+        popupAnchor: [-3, -76]
+      })
     }
   }
 }

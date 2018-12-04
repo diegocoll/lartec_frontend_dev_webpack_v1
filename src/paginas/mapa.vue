@@ -85,10 +85,10 @@ export default {
       defaultIcon: window.L.icon({
         iconUrl: iconUrl,
         shadowUrl: shadowUrl,
-        iconSize: [20],
-        shadowSize: [50, 64],
-        iconAnchor: [22, 94],
-        shadowAnchor: [4, 62],
+        iconSize: [20, 35],
+        iconAnchor: [12, 34],
+        shadowSize: [40, 25],
+        shadowAnchor: [14, 24],
         popupAnchor: [-3, -76]
       })
     }

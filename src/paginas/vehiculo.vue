@@ -21,7 +21,7 @@
           -->
           <v-marker
             :key="i"
-            :icon="icon"
+            :icon="defaultIcon"
             :lat-lng="[reporte.lat, reporte.lon]"
             v-for="(reporte, i) in $store.state.reportes"
           >
@@ -73,9 +73,9 @@ export default {
         iconUrl: iconUrl,
         // shadowUrl: shadowUrl,
         iconSize: [20, 35],
-        iconAnchor: [12, 34],
+        iconAnchor: [12, 34]
         // shadowSize: [40, 25],
-        // shadowAnchor: [14, 24],
+        // shadowAnchor: [14, 24].
         // popupAnchor: [-1, -35]
       })
     }

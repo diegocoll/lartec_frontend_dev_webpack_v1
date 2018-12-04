@@ -42,9 +42,13 @@ import Vue2Leaflet from 'vue2-leaflet'
 // ------------------------------------ URL
 
 // HAY QUE CAMBIAR EL DIRECCIONAMIENTO DE LAS IMAGENES, PORQUE NO VA A FUNCIONAR BIEN ASI. ESTA FORMA ES TEMPORARIA
-import iconUrl from '../../static/images/marker-icon.png'
+import iconUrl from '../images/marker-icon.png'
 
 // import iconUrl from 'leaflet/dist/images/marker-icon.png'
+// import iconUrl from 'leaflet/dist/images/circulo-icon.png'
+// import iconUrl from 'leaflet/dist/images/marker-icon2.png'
+
+// import shadowUrl from '../images/marker-shadow.png'
 // import shadowUrl from 'leaflet/dist/images/marker-shadow.png'
 
 // ------------------------------------ CSS
@@ -60,12 +64,20 @@ export default {
     'v-marker': Vue2Leaflet.Marker
   },
   data () {
-    let icon = window.L.icon(Object.assign({},
-        window.L.Icon.Default.prototype.options,
-        {iconSize: [20], iconAnchor: [10, 30], iconUrl}
-      ))
+    // let icon = window.L.icon(Object.assign({},
+    //     window.L.Icon.Default.prototype.options,
+    //     {iconSize: [20], iconAnchor: [10, 30], iconUrl}
+    //   ))
     return {
-      icon  // SE USA PARA CARGAR LAS IMAGENES DE LOS ICONOS... ANDA MAS O MENOS... VER..!!
+      defaultIcon: window.L.icon({
+        iconUrl: iconUrl,
+        // shadowUrl: shadowUrl,
+        iconSize: [20, 35],
+        iconAnchor: [12, 34],
+        // shadowSize: [40, 25],
+        // shadowAnchor: [14, 24],
+        // popupAnchor: [-1, -35]
+      })
     }
   }
 }

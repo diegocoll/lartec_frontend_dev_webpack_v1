@@ -89,7 +89,7 @@ export default {
         iconAnchor: [12, 34],
         shadowSize: [40, 25],
         shadowAnchor: [14, 24],
-        popupAnchor: [-3, -76]
+        popupAnchor: [-1, -35]
       })
     }
   }

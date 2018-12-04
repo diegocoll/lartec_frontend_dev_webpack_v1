@@ -56,7 +56,7 @@ import iconUrl from 'leaflet/dist/images/marker-icon.png'
 // import iconUrl from 'leaflet/dist/images/circulo-icon.png'
 // import iconUrl from 'leaflet/dist/images/marker-icon2.png'
 
-import shadowUrl from '../images/marker-shadow.png'
+import shadowUrl from '../images/marker-icon.png'
 // import shadowUrl from 'leaflet/dist/images/marker-shadow.png'
 
 // ------------------------------------ CSS

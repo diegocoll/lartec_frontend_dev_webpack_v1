@@ -28,7 +28,8 @@ export const mutationsLogin = {
     // console.log(payload)
     state.user.email = payload.email
     state.user.accessToken = payload.accessToken
-    localStorage.setItem('token', payload.accessToken)   // HAY QUE GUARDAR LOS DATOS EN SESSIONES
+    // state.user.imag = payload.userdata.imag              // COMPLETAR PARA QUE MUESTRE LA IMAGEN DEL USUARIO
+    localStorage.setItem('token', payload.accessToken)      // HAY QUE GUARDAR LOS DATOS EN SESSIONES
     // localStorage.setItem('email', payload.email)         // HAY QUE GUARDAR LOS DATOS EN SESSIONES
     state.user.isLoggedIn = true
     state.showLoader = false

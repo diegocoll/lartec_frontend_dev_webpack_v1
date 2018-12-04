@@ -5,6 +5,7 @@
 
 import Vue from 'vue'
 import Vuetify from 'vuetify'
+import Axios from 'axios'
 import { VueExtendLayout, layout } from 'vue-extend-layout'
 
 import 'chart.js'
@@ -20,10 +21,16 @@ import 'hchs-vue-charts'
 import 'vuetify/dist/vuetify.min.css'
 
 // ------------------------------------------- RUTAS
-
 // import App from './App'
 import router from './router'
 import store from './store'
+
+// ------------------------------------------- AXIOS
+
+// Axios.defaults.baseURL = 'http://localhost:3030'
+Axios.defaults.baseURL = 'http://54.233.162.8:3030' // Para el server remoto
+
+Axios.defaults.headers.common['Authorization'] = localStorage.getItem('token')
 
 // ------------------------------------------- Auth
 

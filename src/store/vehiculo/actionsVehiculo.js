@@ -21,17 +21,17 @@ import axios from 'axios'
 // ------------------------------------------- CONSTANTES
 
 // const API_BASE = 'http://localhost:3030/api'  // VER...!!! CAMBIAR POR UNA VARIABLE GLOBAL DE ENTORNO DE PRODUCCION
-axios.defaults.baseURL = 'http://54.233.162.8:3030/api' // Para el server remoto
+// axios.defaults.baseURL = 'http://54.233.162.8:3030/api' // Para el server remoto
 // axios.defaults.baseURL = 'http://localhost:3030/api' // Para el server local
 
-axios.defaults.headers.common['Authorization'] = localStorage.getItem('token')
+// axios.defaults.headers.common['Authorization'] = localStorage.getItem('token')
 
 // ------------------------------------------- CODIGO
 
 export const actionsVehiculo = {
   loadVehiculos ({commit}) {
     commit(ALL_VEHICULOS)
-    axios.get('/vehiculos').then(response => {
+    axios.get('/api/vehiculos').then(response => {
       // console.log(response.data)
       commit(ALL_VEHICULOS_SUCCESS, response.data)
       // for (var i = 0; i < response.data.length; i++) {

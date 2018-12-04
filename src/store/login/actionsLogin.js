@@ -17,8 +17,9 @@ import qs from 'qs'
 
 // ------------------------------------------- CONSTANTES
 
+// import API_BASE from '././main.js'
 // const API_BASE = 'http://localhost:3030'  // VER...!!! CAMBIAR POR UNA VARIABLE GLOBAL DE ENTORNO DE PRODUCCION
-const API_BASE = 'http://54.233.162.8:3030'  // VER...!!! CAMBIAR POR UNA VARIABLE GLOBAL DE ENTORNO DE PRODUCCION
+// const API_BASE = 'http://54.233.162.8:3030'  // VER...!!! CAMBIAR POR UNA VARIABLE GLOBAL DE ENTORNO DE PRODUCCION
 
 // axios.defaults.baseURL = 'http://localhost:3030/api'
 // axios.defaults.baseURL = 'http://54.233.162.8:3030/api' // Para el server remoto
@@ -29,7 +30,7 @@ export const actionsLogin = {
   startlogin: ({commit}, payload) => {
     return new Promise((resolve, reject) => { // The Promise used for router redirect in login
       commit(LOGIN)
-      axios.post(`${API_BASE}/login`,
+      axios.post(`/login`,
         qs.stringify({
           // username: payload.username,
           email: payload.email,
@@ -42,6 +43,7 @@ export const actionsLogin = {
             commit(STATUSLOGIN, resp.data)
           } else {
             commit(LOGIN_SUCCESS, resp.data)
+            // console.log(resp) //SE AGREGO PARA EL DEBUGEO DEL LOGIN, PARA TRAER LOS DATOS DE USUARIO
             resolve(resp)
           }
         })

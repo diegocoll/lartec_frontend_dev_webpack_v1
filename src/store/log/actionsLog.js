@@ -22,17 +22,17 @@ import axios from 'axios'
 
 // const API_BASE = 'http://localhost:3030/api'  // VER...!!! CAMBIAR POR UNA VARIABLE GLOBAL DE ENTORNO DE PRODUCCION
 
-axios.defaults.baseURL = 'http://54.233.162.8:3030/api' // Para el server remoto
+// axios.defaults.baseURL = 'http://54.233.162.8:3030/api' // Para el server remoto
 // axios.defaults.baseURL = 'http://localhost:3030/api' // Para el server local
 
-axios.defaults.headers.common['Authorization'] = localStorage.getItem('token')
+// axios.defaults.headers.common['Authorization'] = localStorage.getItem('token')
 
 // ------------------------------------------- CODIGO
 
 export const actionsLog = {
   loadReporteLog ({commit}) {
     commit(ALL_LOGS)
-    axios.get('/reportes?filter=%7B%22order%22%3A%20%5B%22fecserv%20DESC%22%5D%2C%20%22limit%22%3A%22100%22%7D&').then(response => {
+    axios.get('/api/reportes?filter=%7B%22order%22%3A%20%5B%22fecserv%20DESC%22%5D%2C%20%22limit%22%3A%22100%22%7D&').then(response => {
       commit(ALL_LOGS_SUCCESS, response.data)
     })
     // .then(resp => {

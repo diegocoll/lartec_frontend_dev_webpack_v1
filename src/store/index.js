@@ -82,6 +82,7 @@ export default new Vuex.Store({
       nombre: '',
       email: '',
       accessToken: '',
+      imag: '',
       isLoggedIn: false
     },
     // -------------------- EQUIPOS
